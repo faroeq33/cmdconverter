@@ -1,5 +1,4 @@
 import { convertNpmToPnpm } from "./cmd-converter.ts";
-import { setupCounter } from "./counter.ts";
 
 // Example usage
 console.log(convertNpmToPnpm("install express"));
@@ -20,5 +19,3 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     </p>
   </div>
 `;
-
-setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
