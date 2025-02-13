@@ -1,3 +1,8 @@
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.tsx";
+
 import { convertNpmToPnpm } from "./cmd-converter.ts";
 
 // Example usage
@@ -7,15 +12,8 @@ console.log(convertNpmToPnpm("uninstall lodash"));
 console.log(convertNpmToPnpm("run build"));
 console.log(convertNpmToPnpm("cache clean"));
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div>
-    <div>{result}</div>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`;
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
